@@ -22,7 +22,9 @@ export class Triangle implements Figure {
     c: number,
   ) {
     if (a <= 0 || b <= 0 || c <= 0) {
-      throw new Error('Side lengths must be greater than 0');
+      throw new Error(
+        `Invalid side lengths: a=${a}, b=${b}, c=${c}. All sides must be greater than 0.`,
+      );
     }
 
     const sides = [a, b, c].sort((x, y) => y - x);
